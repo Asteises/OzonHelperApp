@@ -1,4 +1,4 @@
-package ru.asteises.ozonhelperapp.common.json.model.stocksTemp.request;
+package ru.asteises.ozonhelperapp.common.json.model.request.impl;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -8,7 +8,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import ru.asteises.ozonhelperapp.common.json.model.OzonRestRequest;
+import ru.asteises.ozonhelperapp.common.json.model.request.OzonRestRequest;
 
 @Builder
 @Getter
@@ -17,9 +17,9 @@ import ru.asteises.ozonhelperapp.common.json.model.OzonRestRequest;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
-public class StockRestRequest implements OzonRestRequest<StockFilterRestRequest> {
+public class DefaultRestRequest implements OzonRestRequest<DefaultFilterRestRequest> {
 
-    private StockFilterRestRequest filter;
+    private DefaultFilterRestRequest filter;
 
     @JsonProperty("last_id")
     private String lastId;
@@ -27,12 +27,12 @@ public class StockRestRequest implements OzonRestRequest<StockFilterRestRequest>
     private Integer limit;
 
     @Override
-    public StockFilterRestRequest getFilter() {
+    public DefaultFilterRestRequest getFilter() {
         return filter;
     }
 
     @Override
-    public void setFilter(StockFilterRestRequest filter) {
+    public void setFilter(DefaultFilterRestRequest filter) {
         this.filter = filter;
     }
 

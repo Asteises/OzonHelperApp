@@ -1,4 +1,4 @@
-package ru.asteises.ozonhelperapp.common.json.model.stocksTemp.response;
+package ru.asteises.ozonhelperapp.common.json.model.stock.response;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -8,7 +8,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import ru.asteises.ozonhelperapp.common.json.model.OzonRestResponse;
+import ru.asteises.ozonhelperapp.common.json.model.response.OzonRestResponse;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package ru.asteises.ozonhelperapp.common.json.model;
+package ru.asteises.ozonhelperapp.common.json.model.request;
 
 public interface OzonRestRequest<T> {
 

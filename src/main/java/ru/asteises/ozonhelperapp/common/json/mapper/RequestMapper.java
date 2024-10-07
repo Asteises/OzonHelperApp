@@ -1,7 +1,10 @@
 package ru.asteises.ozonhelperapp.common.json.mapper;
 
 import lombok.NonNull;
+import ru.asteises.ozonhelperapp.common.client.model.RequestParams;
 import ru.asteises.ozonhelperapp.common.json.model.list.ProductListNodeOzonRestRequestJson;
+import ru.asteises.ozonhelperapp.common.json.model.request.impl.DefaultFilterRestRequest;
+import ru.asteises.ozonhelperapp.common.json.model.request.impl.DefaultRestRequest;
 import ru.asteises.ozonhelperapp.common.json.model.value.ProductListValueOzonRestRequestJson;
 
 import java.util.ArrayList;
@@ -38,6 +41,23 @@ public interface RequestMapper {
                 .offerIds(offerIds != null ? offerIds.stream().toList() : new ArrayList<>())
                 .productIds(productIds != null ? productIds.stream().toList() : new ArrayList<>())
                 .visibility(visibility.isEmpty() ? visibility : "ALL")
+                .build();
+    }
+
+    static DefaultFilterRestRequest toDefaultFilterRequest(RequestParams params) {
+        return DefaultFilterRestRequest.builder()
+                .offerIds(params.getOfferIds())
+                .productIds(params.getProductIds())
+                .visibility(params.getVisibility().isEmpty() ? "ALL" : params.getVisibility())
+                .build();
+    }
+
+
+    static DefaultRestRequest toDefaultRequest(DefaultFilterRestRequest filter, RequestParams params, String lastId) {
+        return DefaultRestRequest.builder()
+                .filter(filter)
+                .limit(params.getLimit() == null ? 100 : params.getLimit())
+                .lastId(lastId)
                 .build();
     }
 }

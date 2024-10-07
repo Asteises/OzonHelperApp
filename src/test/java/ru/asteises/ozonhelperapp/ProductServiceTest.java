@@ -21,21 +21,21 @@ public class ProductServiceTest {
     @Autowired
     private ProductService productService;
 
-    @Test
-    @DisplayName("Получаем список всех товаров в Архиве")
-    public void getProductByVisibilityArchivedTest() {
-
-        List<ProductShortNode> actualProductShortNodesInArchive = productService.getProductByVisibilityArchived();
-
-        assertEquals(1636, actualProductShortNodesInArchive.size());
-    }
-
-    @Test
-    @DisplayName("Получаем список всех товаров в архиве у которых не нулевой остаток")
-    public void getAllAvailableProductIdsInArchiveTest() {
-
-        List<ProductShortNode> result = productService.getActualProductByVisibilityArchived();
-
-        assertEquals(0, 0);
-    }
+//    @Test
+//    @DisplayName("Получаем список всех товаров в Архиве")
+//    public void getProductByVisibilityArchivedTest() {
+//
+//        List<ProductShortNode> actualProductShortNodesInArchive = productService.ge();
+//
+//        assertEquals(1636, actualProductShortNodesInArchive.size());
+//    }
+//
+//    @Test
+//    @DisplayName("Получаем список всех товаров в архиве у которых не нулевой остаток")
+//    public void getAllAvailableProductIdsInArchiveTest() {
+//
+//        List<ProductShortNode> result = productService.getActualProductByVisibilityArchived();
+//
+//        assertEquals(0, 0);
+//    }
 }

@@ -1,4 +1,4 @@
-package ru.asteises.ozonhelperapp.common.json.model.stocks;
+package ru.asteises.ozonhelperapp.common.json.model.stock.response;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
-public class StockNodeResultJson {
+public class StockItemNodeRestResponse {
 
     private String type;
 
