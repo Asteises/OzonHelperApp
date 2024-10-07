@@ -1,4 +1,4 @@
-package ru.asteises.ozonhelperapp.common.json.model;
+package ru.asteises.ozonhelperapp.common.json.model.price;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -8,10 +8,13 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import ru.asteises.ozonhelperapp.common.json.model.stocks.ProductListStocksNodeOzonRestResultJson;
+import ru.asteises.ozonhelperapp.common.json.model.response.OzonRestResponse;
 
 import java.util.List;
 
+/**
+ * Результаты запроса.
+ */
 @Builder
 @Getter
 @AllArgsConstructor
@@ -19,22 +22,34 @@ import java.util.List;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
-public class ProductListStockOzonRestResponseJson implements OzonRestResponse<ProductListStocksNodeOzonRestResultJson> {
+public class ProductResultRestResponse implements OzonRestResponse<ProductItemRestResponse> {
 
-    private List<ProductListStocksNodeOzonRestResultJson> items;
+    /**
+     * Список товаров.
+     */
+    private List<ProductItemRestResponse> items;
 
-    private Integer total;
-
+    /**
+     * Идентификатор последнего значения на странице.
+     * <br>
+     * Чтобы получить следующие значения, передайте полученное значение в следующем запросе в параметре last_id.
+     */
     @JsonProperty("last_id")
     private String lastId;
 
+    /**
+     * Количество товаров в списке.
+     */
+    private Integer total;
+
+
     @Override
-    public List<ProductListStocksNodeOzonRestResultJson> getItems() {
+    public List<ProductItemRestResponse> getItems() {
         return items;
     }
 
     @Override
-    public void setItems(List<ProductListStocksNodeOzonRestResultJson> items) {
+    public void setItems(List<ProductItemRestResponse> items) {
         this.items = items;
     }
 

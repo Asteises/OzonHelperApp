@@ -1,4 +1,4 @@
-package ru.asteises.ozonhelperapp.common.json.model.stocks;
+package ru.asteises.ozonhelperapp.common.json.model.price;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -9,8 +9,6 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
-
 @Builder
 @Getter
 @AllArgsConstructor
@@ -18,13 +16,14 @@ import java.util.List;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
-public class ProductListStocksNodeOzonRestResultJson {
+public class PriceIndexData {
 
-    @JsonProperty("product_id")
-    private Integer productId;
+    @JsonProperty("minimal_price")
+    private String minimalPrice;
 
-    @JsonProperty("offer_id")
-    private String offerId;
+    @JsonProperty("minimal_price_currency")
+    private String minimalPriceCurrency;
 
-    private List<StockNodeResultJson> stocks;
+    @JsonProperty("price_index_value")
+    private Integer priceIndexValue;
 }

@@ -1,13 +1,13 @@
 package ru.asteises.ozonhelperapp.common.client.model;
 
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NonNull;
+import lombok.*;
 
 import java.util.Set;
 
 @Builder
 @Getter
+@AllArgsConstructor
+@NoArgsConstructor
 public class RequestParams {
 
     private Set<String> offerIds;

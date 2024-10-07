@@ -8,7 +8,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import ru.asteises.ozonhelperapp.common.json.model.ProductListOzonRestResponseJson;
+import ru.asteises.ozonhelperapp.common.json.model.list.ProductListOzonRestResponseJson;
 
 @Builder
 @Getter

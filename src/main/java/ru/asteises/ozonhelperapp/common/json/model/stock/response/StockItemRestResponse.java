@@ -1,4 +1,4 @@
-package ru.asteises.ozonhelperapp.common.json.model.stocksTemp.request;
+package ru.asteises.ozonhelperapp.common.json.model.stock.response;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -9,8 +9,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.List;
 
 @Builder
 @Getter
@@ -19,13 +18,14 @@ import java.util.Set;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
-public class StockFilterRestRequest {
-
-    @JsonProperty("offer_id")
-    private Set<String> offerIds = new HashSet<>();
+public class StockItemRestResponse {
 
     @JsonProperty("product_id")
-    private Set<String> productIds = new HashSet<>();
+    private Long productId;
 
-    private String visibility;
+    @JsonProperty("offer_id")
+    private String offerId;
+
+    @JsonProperty("stocks")
+    private List<StockItemNodeRestResponse> stocks;
 }
