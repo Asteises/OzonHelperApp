@@ -9,3 +9,6 @@ ozon:
   url: https://api-seller.ozon.ru
   client_id: 125357
   api-key: bc069159-49f5-47ae-b0e5-e75e0c8c16b0
+
+ui:
+  url: http://localhost:4200/

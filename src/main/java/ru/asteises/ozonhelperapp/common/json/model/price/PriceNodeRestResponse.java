@@ -30,6 +30,12 @@ public class PriceNodeRestResponse {
     private String price;
 
     /**
+     * Минимальная цена товара после применения всех скидок.
+     */
+    @JsonProperty("min_price")
+    private String minPrice;
+
+    /**
      * Цена до учёта скидок. На карточке товара отображается зачёркнутой.
      */
     @JsonProperty("old_price")

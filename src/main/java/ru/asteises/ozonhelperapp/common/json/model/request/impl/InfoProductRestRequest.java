@@ -4,12 +4,11 @@ import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
-import java.util.HashSet;
-import java.util.Set;
-
-@ToString
 @Builder
 @Getter
 @AllArgsConstructor
@@ -17,13 +16,15 @@ import java.util.Set;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
-public class DefaultFilterRestRequest {
+public class InfoProductRestRequest {
 
     @JsonProperty("offer_id")
-    private Set<String> offerIds = new HashSet<>();
+    private String offerId;
 
     @JsonProperty("product_id")
-    private Set<String> productIds = new HashSet<>();
+    private Integer productId;
 
-    private String visibility;
+    @JsonProperty("sku")
+    private Integer sku;
 }
+

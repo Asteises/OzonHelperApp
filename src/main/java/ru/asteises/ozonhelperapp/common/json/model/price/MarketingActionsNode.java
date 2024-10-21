@@ -1,15 +1,12 @@
 package ru.asteises.ozonhelperapp.common.json.model.price;
 
-import com.fasterxml.jackson.annotation.JsonAutoDetect;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDateTime;
+import java.time.ZonedDateTime;
 import java.util.List;
 
 /**
@@ -28,13 +25,13 @@ public class MarketingActionsNode {
      * Дата и время начала текущего периода по всем действующим акциям.
      */
     @JsonProperty("current_period_from")
-    private LocalDateTime currentPeriodFrom;
+    private ZonedDateTime currentPeriodFrom;
 
     /**
      * Дата и время окончания текущего периода по всем действующим акциям.
      */
     @JsonProperty("current_period_to")
-    private LocalDateTime currentPeriodTo;
+    private ZonedDateTime currentPeriodTo;
 
     /**
      * Если к товару может быть применена акция за счёт Ozon — true.
